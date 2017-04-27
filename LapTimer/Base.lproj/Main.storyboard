@@ -125,12 +125,21 @@
                                     <action selector="resetAll:" destination="n3n-t6-bGe" eventType="touchUpInside" id="j7W-jR-zWF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hx-Tc-kGf">
+                                <rect key="frame" x="93" y="654" width="30" height="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="changeCurrentChrono:" destination="n3n-t6-bGe" eventType="touchUpInside" id="QbN-vS-VMb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.72712176989999999" green="0.83868847619999998" blue="0.92505262310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iKF-S9-HG9" firstAttribute="top" secondItem="Xjf-EM-AN3" secondAttribute="bottom" id="FkN-SQ-HuI"/>
                             <constraint firstItem="iKF-S9-HG9" firstAttribute="centerX" secondItem="QHk-nU-IQg" secondAttribute="centerX" id="ZEI-qV-lO0"/>
+                            <constraint firstItem="0Hx-Tc-kGf" firstAttribute="top" secondItem="iKF-S9-HG9" secondAttribute="bottom" constant="8" id="a1E-do-c8P"/>
                             <constraint firstItem="d0h-aO-BNg" firstAttribute="leading" secondItem="QHk-nU-IQg" secondAttribute="leading" constant="8" id="gLS-77-V5f"/>
+                            <constraint firstItem="0Hx-Tc-kGf" firstAttribute="leading" secondItem="d0h-aO-BNg" secondAttribute="trailing" constant="8" id="jV1-gH-Xfx"/>
                             <constraint firstItem="iKF-S9-HG9" firstAttribute="width" secondItem="QHk-nU-IQg" secondAttribute="width" id="kd3-BG-McS"/>
                             <constraint firstItem="d0h-aO-BNg" firstAttribute="top" secondItem="iKF-S9-HG9" secondAttribute="bottom" constant="8" id="lZs-a4-5ec"/>
                             <constraint firstItem="iKF-S9-HG9" firstAttribute="height" secondItem="QHk-nU-IQg" secondAttribute="height" multiplier="0.85" id="rWZ-Bn-bQe"/>

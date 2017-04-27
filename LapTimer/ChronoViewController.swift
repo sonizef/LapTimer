@@ -31,6 +31,7 @@ class ChronoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Actions des boutons
     @IBAction func start(_ sender: UIButton) {
         if(sender.titleLabel?.text == "Start"){
             sender.isSelected = true
@@ -45,7 +46,8 @@ class ChronoViewController: UIViewController {
     @IBAction func track(_ sender: Any) {
     }
     
-    
+    //Fonctions
+    //Compteur qui incremente
     func counter(){
         
         cent += 1
@@ -64,6 +66,7 @@ class ChronoViewController: UIViewController {
         
     }
     
+    //Remet le compteur à 0
     func reset(){
         timer?.invalidate()
         min = 0
