@@ -1,26 +1,208 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n3n-t6-bGe">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Les Chronos Table View Controller-->
+        <scene sceneID="nk4-QS-rqs">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableViewController id="47K-Ac-D5l" customClass="LesChronosTableViewController" customModule="LapTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="142" sectionHeaderHeight="28" sectionFooterHeight="28" id="AK6-Hn-wxp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="626"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="spd-Jt-S23">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="DwC-vD-M14">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DwC-vD-M14" id="n78-tt-AZl">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75T-eo-Ejl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                                    <connections>
+                                                        <segue destination="QYi-5L-Yqq" kind="embed" identifier="chrono1" id="hgt-wY-mdg"/>
+                                                    </connections>
+                                                </containerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="75T-eo-Ejl" secondAttribute="bottom" id="9SI-j0-9fc"/>
+                                                <constraint firstItem="75T-eo-Ejl" firstAttribute="leading" secondItem="n78-tt-AZl" secondAttribute="leading" id="HSM-Sd-hod"/>
+                                                <constraint firstAttribute="trailing" secondItem="75T-eo-Ejl" secondAttribute="trailing" id="gvi-IZ-lHx"/>
+                                                <constraint firstItem="75T-eo-Ejl" firstAttribute="top" secondItem="n78-tt-AZl" secondAttribute="top" id="zmY-So-gLd"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3b2-Qk-p8T">
+                                        <rect key="frame" x="0.0" y="142" width="414" height="142"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3b2-Qk-p8T" id="Ju2-z5-do9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHA-Wd-ONG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                                    <connections>
+                                                        <segue destination="QYi-5L-Yqq" kind="embed" identifier="chrono2" id="xIu-57-orX"/>
+                                                    </connections>
+                                                </containerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="WHA-Wd-ONG" firstAttribute="leading" secondItem="Ju2-z5-do9" secondAttribute="leading" id="300-eE-u08"/>
+                                                <constraint firstAttribute="trailing" secondItem="WHA-Wd-ONG" secondAttribute="trailing" id="bnO-H9-TnK"/>
+                                                <constraint firstItem="WHA-Wd-ONG" firstAttribute="top" secondItem="Ju2-z5-do9" secondAttribute="top" id="dgV-fA-Wcc"/>
+                                                <constraint firstAttribute="bottom" secondItem="WHA-Wd-ONG" secondAttribute="bottom" id="gdJ-vP-JkQ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eDC-b1-Hbp">
+                                        <rect key="frame" x="0.0" y="284" width="414" height="142"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eDC-b1-Hbp" id="UZ5-L1-bjq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFh-gX-GsY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                                                    <connections>
+                                                        <segue destination="QYi-5L-Yqq" kind="embed" identifier="chrono3" id="hfi-mH-JKz"/>
+                                                    </connections>
+                                                </containerView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="TFh-gX-GsY" firstAttribute="top" secondItem="UZ5-L1-bjq" secondAttribute="top" id="BtI-2y-ckH"/>
+                                                <constraint firstItem="TFh-gX-GsY" firstAttribute="leading" secondItem="UZ5-L1-bjq" secondAttribute="leading" id="JIP-39-PeH"/>
+                                                <constraint firstAttribute="trailing" secondItem="TFh-gX-GsY" secondAttribute="trailing" id="gbA-SV-9Tq"/>
+                                                <constraint firstAttribute="bottom" secondItem="TFh-gX-GsY" secondAttribute="bottom" id="kOv-8t-LG4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="47K-Ac-D5l" id="oxH-u1-JaZ"/>
+                            <outlet property="delegate" destination="47K-Ac-D5l" id="oqq-Wa-NAV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T16-fm-h48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="-240"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="zwR-39-mQ4">
+            <objects>
+                <viewController id="n3n-t6-bGe" customClass="MainViewController" customModule="LapTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xjf-EM-AN3"/>
+                        <viewControllerLayoutGuide type="bottom" id="IBS-78-7yd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QHk-nU-IQg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKF-S9-HG9">
+                                <rect key="frame" x="0.0" y="20" width="414" height="626"/>
+                                <connections>
+                                    <segue destination="47K-Ac-D5l" kind="embed" identifier="tableChronos" id="5TQ-rN-qv1"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0h-aO-BNg">
+                                <rect key="frame" x="8" y="654" width="77" height="30"/>
+                                <state key="normal" title="RESET ALL"/>
+                                <connections>
+                                    <action selector="resetAll:" destination="n3n-t6-bGe" eventType="touchUpInside" id="j7W-jR-zWF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72712176989999999" green="0.83868847619999998" blue="0.92505262310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iKF-S9-HG9" firstAttribute="top" secondItem="Xjf-EM-AN3" secondAttribute="bottom" id="FkN-SQ-HuI"/>
+                            <constraint firstItem="iKF-S9-HG9" firstAttribute="centerX" secondItem="QHk-nU-IQg" secondAttribute="centerX" id="ZEI-qV-lO0"/>
+                            <constraint firstItem="d0h-aO-BNg" firstAttribute="leading" secondItem="QHk-nU-IQg" secondAttribute="leading" constant="8" id="gLS-77-V5f"/>
+                            <constraint firstItem="iKF-S9-HG9" firstAttribute="width" secondItem="QHk-nU-IQg" secondAttribute="width" id="kd3-BG-McS"/>
+                            <constraint firstItem="d0h-aO-BNg" firstAttribute="top" secondItem="iKF-S9-HG9" secondAttribute="bottom" constant="8" id="lZs-a4-5ec"/>
+                            <constraint firstItem="iKF-S9-HG9" firstAttribute="height" secondItem="QHk-nU-IQg" secondAttribute="height" multiplier="0.85" id="rWZ-Bn-bQe"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="enr-Ut-mAO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="90" y="-1006"/>
+        </scene>
+        <!--Chrono View Controller-->
+        <scene sceneID="BEN-uK-8ok">
+            <objects>
+                <viewController id="QYi-5L-Yqq" customClass="ChronoViewController" customModule="LapTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JyH-5O-CWw"/>
+                        <viewControllerLayoutGuide type="bottom" id="7ok-IL-tRk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FmG-ps-sbI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="142"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbY-ir-F9x">
+                                <rect key="frame" x="8" y="10" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VU-bK-EAq">
+                                <rect key="frame" x="76" y="104" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="fXY-wi-UhD"/>
+                                </constraints>
+                                <state key="normal" title="Track"/>
+                                <connections>
+                                    <action selector="track:" destination="QYi-5L-Yqq" eventType="touchUpInside" id="ftC-Nm-7FH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03m-Rl-Sx5">
+                                <rect key="frame" x="8" y="104" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4TQ-kL-NJd"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <state key="selected" title="Stop"/>
+                                <connections>
+                                    <action selector="start:" destination="QYi-5L-Yqq" eventType="touchUpInside" id="cop-xi-Sf2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="03m-Rl-Sx5" firstAttribute="leading" secondItem="FmG-ps-sbI" secondAttribute="leading" constant="8" id="5VE-3X-aXG"/>
+                            <constraint firstItem="UbY-ir-F9x" firstAttribute="top" secondItem="JyH-5O-CWw" secondAttribute="bottom" constant="10" id="CHG-uD-F8g"/>
+                            <constraint firstItem="7ok-IL-tRk" firstAttribute="top" secondItem="2VU-bK-EAq" secondAttribute="bottom" constant="8" id="Zrq-km-c61"/>
+                            <constraint firstItem="UbY-ir-F9x" firstAttribute="width" secondItem="FmG-ps-sbI" secondAttribute="width" multiplier="0.5" id="gRc-Ub-ma7"/>
+                            <constraint firstItem="2VU-bK-EAq" firstAttribute="leading" secondItem="03m-Rl-Sx5" secondAttribute="trailing" constant="8" id="rEZ-uc-wEU"/>
+                            <constraint firstItem="UbY-ir-F9x" firstAttribute="leading" secondItem="FmG-ps-sbI" secondAttribute="leading" constant="8" id="vZ1-Bh-22X"/>
+                            <constraint firstItem="7ok-IL-tRk" firstAttribute="top" secondItem="03m-Rl-Sx5" secondAttribute="bottom" constant="8" id="yOQ-b1-MUh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnStart" destination="03m-Rl-Sx5" id="wuI-En-JpV"/>
+                        <outlet property="lblMain" destination="UbY-ir-F9x" id="6Rl-Aw-FwY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KtO-bB-NTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="89.855072463768124" y="591.84782608695662"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hfi-mH-JKz"/>
+    </inferredMetricsTieBreakers>
 </document>

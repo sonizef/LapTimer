@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B9220A11EB25D8600456876 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9220A01EB25D8600456876 /* Functions.swift */; };
 		8BDE60831EA9647A005E0FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60821EA9647A005E0FA3 /* AppDelegate.swift */; };
-		8BDE60851EA9647A005E0FA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60841EA9647A005E0FA3 /* ViewController.swift */; };
 		8BDE60881EA9647A005E0FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDE60861EA9647A005E0FA3 /* Main.storyboard */; };
 		8BDE608A1EA9647A005E0FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDE60891EA9647A005E0FA3 /* Assets.xcassets */; };
 		8BDE608D1EA9647A005E0FA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDE608B1EA9647A005E0FA3 /* LaunchScreen.storyboard */; };
 		8BDE60981EA9647A005E0FA3 /* LapTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60971EA9647A005E0FA3 /* LapTimerTests.swift */; };
 		8BDE60A31EA9647A005E0FA3 /* LapTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60A21EA9647A005E0FA3 /* LapTimerUITests.swift */; };
+		8BDE60B11EA966D7005E0FA3 /* ChronoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60B01EA966D7005E0FA3 /* ChronoViewController.swift */; };
+		8BDE60B51EA96AFA005E0FA3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60B41EA96AFA005E0FA3 /* MainViewController.swift */; };
+		8BDE60B71EA96D27005E0FA3 /* LesChronosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60B61EA96D27005E0FA3 /* LesChronosTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B9220A01EB25D8600456876 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		8BDE607F1EA9647A005E0FA3 /* LapTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LapTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDE60821EA9647A005E0FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8BDE60841EA9647A005E0FA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8BDE60871EA9647A005E0FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8BDE60891EA9647A005E0FA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BDE608C1EA9647A005E0FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		8BDE609E1EA9647A005E0FA3 /* LapTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LapTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDE60A21EA9647A005E0FA3 /* LapTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LapTimerUITests.swift; sourceTree = "<group>"; };
 		8BDE60A41EA9647A005E0FA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BDE60B01EA966D7005E0FA3 /* ChronoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChronoViewController.swift; sourceTree = "<group>"; };
+		8BDE60B41EA96AFA005E0FA3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8BDE60B61EA96D27005E0FA3 /* LesChronosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LesChronosTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +104,14 @@
 			isa = PBXGroup;
 			children = (
 				8BDE60821EA9647A005E0FA3 /* AppDelegate.swift */,
-				8BDE60841EA9647A005E0FA3 /* ViewController.swift */,
 				8BDE60861EA9647A005E0FA3 /* Main.storyboard */,
 				8BDE60891EA9647A005E0FA3 /* Assets.xcassets */,
 				8BDE608B1EA9647A005E0FA3 /* LaunchScreen.storyboard */,
 				8BDE608E1EA9647A005E0FA3 /* Info.plist */,
+				8BDE60B41EA96AFA005E0FA3 /* MainViewController.swift */,
+				8BDE60B61EA96D27005E0FA3 /* LesChronosTableViewController.swift */,
+				8BDE60B01EA966D7005E0FA3 /* ChronoViewController.swift */,
+				8B9220A01EB25D8600456876 /* Functions.swift */,
 			);
 			path = LapTimer;
 			sourceTree = "<group>";
@@ -262,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BDE60851EA9647A005E0FA3 /* ViewController.swift in Sources */,
+				8BDE60B51EA96AFA005E0FA3 /* MainViewController.swift in Sources */,
+				8BDE60B71EA96D27005E0FA3 /* LesChronosTableViewController.swift in Sources */,
 				8BDE60831EA9647A005E0FA3 /* AppDelegate.swift in Sources */,
+				8B9220A11EB25D8600456876 /* Functions.swift in Sources */,
+				8BDE60B11EA966D7005E0FA3 /* ChronoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2SYMV5G8NJ;
 				INFOPLIST_FILE = LapTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sw.LapTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -430,6 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2SYMV5G8NJ;
 				INFOPLIST_FILE = LapTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sw.LapTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +528,7 @@
 				8BDE60A91EA9647A005E0FA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BDE60AA1EA9647A005E0FA3 /* Build configuration list for PBXNativeTarget "LapTimerTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +537,7 @@
 				8BDE60AC1EA9647A005E0FA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8BDE60AD1EA9647A005E0FA3 /* Build configuration list for PBXNativeTarget "LapTimerUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +546,7 @@
 				8BDE60AF1EA9647A005E0FA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
