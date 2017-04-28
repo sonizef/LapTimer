@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+import MediaPlayer
 
 class MainViewController: UIViewController{
 
@@ -14,11 +16,13 @@ class MainViewController: UIViewController{
     var tableChronos: LesChronosTableViewController!
     var currentChrono: ChronoViewController?
     var numChrono = 0
+    var currentVolume = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        volumeButtonInit()
         changeChrono(0)
     }
 
@@ -58,11 +62,58 @@ class MainViewController: UIViewController{
         currentChrono?.view.backgroundColor = UIColor.red
     }
     
+    //Initalise l'ecouteur pour les boutons volumes
+    func volumeButtonInit(){
+        let volumeView = MPVolumeView(frame: CGRect(x: -1000, y: -1000, width: 1, height: 1))
+        self.view.addSubview(volumeView)
+        
+        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        
+        do{
+            try audioSession.setActive(true)
+        }
+        catch{
+            print("Erreur")
+        }
+        
+        audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
+
+    }
+    
     
     //Override
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "tableChronos"){
             tableChronos = segue.destination as! LesChronosTableViewController
+        }
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        if(keyPath == "outputVolume"){
+            let volumeLevel = MPMusicPlayerController.applicationMusicPlayer().value(forKeyPath: "volume") as! Double
+            if(volumeLevel > 0.5){
+                //Quand on augmente le son
+                
+                //Si chrono deja lancé, fonction "track"
+                if(currentChrono?.timer?.isValid == true){
+                    
+                }
+                else{
+                    currentChrono?.start((currentChrono?.btnStart)!)
+                }
+            }
+            
+            if(volumeLevel < 0.5){
+                //Quand on baisse le son
+                changeChrono(numChrono + 1)
+                
+            }
+            
+            //On remet toujours le volume à 0.5
+            (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
         }
     }
     
