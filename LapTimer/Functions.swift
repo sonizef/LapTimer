@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-
+let dateFormatter = DateFormatter()
 
 func startTimer(_ view:ChronoViewController) -> Timer{
     return(Timer.scheduledTimer(timeInterval: 0.01, target: view, selector: #selector(ChronoViewController.counter), userInfo: nil, repeats: true))

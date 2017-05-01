@@ -20,7 +20,7 @@ class MainViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        self.view.backgroundColor = UIColor.init(patternImage: UIImage(named: "background.jpg")!)
         volumeButtonInit()
         changeChrono(0)
     }
@@ -46,7 +46,7 @@ class MainViewController: UIViewController{
     //Change le chronos courant
     func changeChrono(_ num:Int){
         
-        currentChrono?.view.backgroundColor = UIColor.clear
+        currentChrono?.selectedBackground.alpha = 0
         
         //On s'assure que le chiffre entrée soit censé
         if(num < tableChronos.lesChronos.count){
@@ -58,7 +58,7 @@ class MainViewController: UIViewController{
             currentChrono = tableChronos.lesChronos[numChrono]
         }
         
-        currentChrono?.view.backgroundColor = UIColor.red
+        currentChrono?.selectedBackground.alpha = 0.1
     }
     
     //Initalise l'ecouteur pour les boutons volumes

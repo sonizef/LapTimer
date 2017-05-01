@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Erreur Ambiance")
         }
         
+        dateFormatter.dateFormat = "mm:ss.SS"
+        
         return true
     }
 

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B9220A11EB25D8600456876 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9220A01EB25D8600456876 /* Functions.swift */; };
+		8B9E8CBD1EB77B1D0079DDD7 /* DS-DIGI.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E8CBB1EB77B1D0079DDD7 /* DS-DIGI.TTF */; };
+		8B9E8CBE1EB77B1D0079DDD7 /* DS-DIGIB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 8B9E8CBC1EB77B1D0079DDD7 /* DS-DIGIB.TTF */; };
 		8BDE60831EA9647A005E0FA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDE60821EA9647A005E0FA3 /* AppDelegate.swift */; };
 		8BDE60881EA9647A005E0FA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDE60861EA9647A005E0FA3 /* Main.storyboard */; };
 		8BDE608A1EA9647A005E0FA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDE60891EA9647A005E0FA3 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		8B9220A01EB25D8600456876 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		8B9E8CBB1EB77B1D0079DDD7 /* DS-DIGI.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGI.TTF"; sourceTree = "<group>"; };
+		8B9E8CBC1EB77B1D0079DDD7 /* DS-DIGIB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIB.TTF"; sourceTree = "<group>"; };
 		8BDE607F1EA9647A005E0FA3 /* LapTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LapTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDE60821EA9647A005E0FA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BDE60871EA9647A005E0FA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +84,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B9E8CB91EB77AE40079DDD7 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				8B9E8CBA1EB77AEB0079DDD7 /* Fonts */,
+			);
+			name = Ressources;
+			sourceTree = "<group>";
+		};
+		8B9E8CBA1EB77AEB0079DDD7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8B9E8CBB1EB77B1D0079DDD7 /* DS-DIGI.TTF */,
+				8B9E8CBC1EB77B1D0079DDD7 /* DS-DIGIB.TTF */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		8BDE60761EA96479005E0FA3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +124,7 @@
 		8BDE60811EA9647A005E0FA3 /* LapTimer */ = {
 			isa = PBXGroup;
 			children = (
+				8B9E8CB91EB77AE40079DDD7 /* Ressources */,
 				8BDE60821EA9647A005E0FA3 /* AppDelegate.swift */,
 				8BDE60861EA9647A005E0FA3 /* Main.storyboard */,
 				8BDE60891EA9647A005E0FA3 /* Assets.xcassets */,
@@ -244,6 +266,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B9E8CBE1EB77B1D0079DDD7 /* DS-DIGIB.TTF in Resources */,
+				8B9E8CBD1EB77B1D0079DDD7 /* DS-DIGI.TTF in Resources */,
 				8BDE608D1EA9647A005E0FA3 /* LaunchScreen.storyboard in Resources */,
 				8BDE608A1EA9647A005E0FA3 /* Assets.xcassets in Resources */,
 				8BDE60881EA9647A005E0FA3 /* Main.storyboard in Resources */,

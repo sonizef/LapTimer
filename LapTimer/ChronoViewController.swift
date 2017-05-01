@@ -12,15 +12,18 @@ class ChronoViewController: UIViewController {
     
     //Objets et variables
     var timer: Timer?
+    var time = "00:00.00"
     var min = 0
     var sec = 0
     var cent = 0
     var nbTours = 0
     
+    
     //Outlet
     @IBOutlet weak var lblMain: UILabel!
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet var lblSecondary: [UILabel]!
+    @IBOutlet weak var selectedBackground: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,14 +60,14 @@ class ChronoViewController: UIViewController {
             min += 1
         }
     
-        
-        lblMain.text = "\(String(format: "%02d", min)):\(String(format: "%02d", sec)):\(String(format: "%02d", cent))"
+        time = dateFormatter.string(from: dateFormatter.date(from: "\(min):\(sec).\(cent)")!)
+        lblMain.text = time
         
     }
     
     //Demarre le chrono
     func start(_ btn:UIButton){
-        if(btn.titleLabel?.text == "Start"){
+        if(btn.isSelected == false){
             btn.isSelected = true
             timer = startTimer(self)
         }
