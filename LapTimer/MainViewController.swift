@@ -16,7 +16,6 @@ class MainViewController: UIViewController{
     var tableChronos: LesChronosTableViewController!
     var currentChrono: ChronoViewController?
     var numChrono = 0
-    var currentVolume = 0.5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,17 +66,6 @@ class MainViewController: UIViewController{
         let volumeView = MPVolumeView(frame: CGRect(x: -1000, y: -1000, width: 1, height: 1))
         self.view.addSubview(volumeView)
         
-        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
-        
-        let audioSession = AVAudioSession.sharedInstance()
-        
-        do{
-            try audioSession.setActive(true)
-        }
-        catch{
-            print("Erreur")
-        }
-        
         audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
 
     }
@@ -93,8 +81,8 @@ class MainViewController: UIViewController{
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         
         if(keyPath == "outputVolume"){
-            let volumeLevel = MPMusicPlayerController.applicationMusicPlayer().value(forKeyPath: "volume") as! Double
-            if(volumeLevel > 0.5){
+            let volumeLevel = MPMusicPlayerController.applicationMusicPlayer().value(forKeyPath: "volume") as! Float
+            if(volumeLevel > currentVolume){
                 //Quand on augmente le son
                 
                 //Si chrono deja lancé, fonction "track"
@@ -106,14 +94,14 @@ class MainViewController: UIViewController{
                 }
             }
             
-            if(volumeLevel < 0.5){
+            if(volumeLevel < currentVolume){
                 //Quand on baisse le son
                 changeChrono(numChrono + 1)
                 
             }
             
             //On remet toujours le volume à 0.5
-            (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
+            (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(currentVolume, animated: false)
         }
     }
     

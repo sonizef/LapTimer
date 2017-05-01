@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
+import MediaPlayer
+
+var audioSession: AVAudioSession!
+var currentVolume: Float!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        audioSession = AVAudioSession.sharedInstance()
+        
+//        let volumeView = MPVolumeView(frame: CGRect(x: -1000, y: -1000, width: 1, height: 1))
+//        self.view.addSubview(volumeView)
+        
+        //        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
+        //
+        
+        do{
+            try audioSession.setCategory("AVAudioSessionCategoryAmbient")
+            
+        }
+        catch{
+            print("Erreur Ambiance")
+        }
+        
         return true
     }
 
@@ -35,6 +56,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+        
+        do{
+            try audioSession.setActive(true)
+        }
+        catch{
+            print("setActive Erreur")
+        }
+        
+        currentVolume = audioSession.outputVolume
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
