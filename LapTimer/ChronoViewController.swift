@@ -24,6 +24,7 @@ class ChronoViewController: UIViewController {
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet var lblSecondary: [UILabel]!
     @IBOutlet weak var selectedBackground: UIView!
+    @IBOutlet weak var lblDiff: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,10 +85,12 @@ class ChronoViewController: UIViewController {
         sec = 0
         cent = 0
         
-        lblMain.text = "\(String(format: "%02d", min)):\(String(format: "%02d", sec)):\(String(format: "%02d", cent))"
+        lblMain.text = "\(String(format: "%02d", min)):\(String(format: "%02d", sec)).\(String(format: "%02d", cent))"
         lblSecondary[0].text = lblMain.text
         lblSecondary[1].text = lblMain.text
         lblSecondary[2].text = lblMain.text
+        lblDiff.text = lblMain.text
+        lblDiff.textColor = UIColor.white
         
         if(btnStart.isSelected){
             btnStart.isSelected = false
@@ -100,6 +103,24 @@ class ChronoViewController: UIViewController {
         
         lblSecondary[2].text = lblSecondary[1].text
         lblSecondary[1].text = lblSecondary[0].text
+        
+        
+        if(lblSecondary[0].text != "00:00.00"){
+            let diff = getDiff(t1: lblMain.text!, t2: lblSecondary[0].text!)
+            if(diff[0] == "0"){
+                lblDiff.textColor = UIColor.green
+                lblDiff.text = "+\(diff[1])"
+            }
+            else if(diff[0] == "0"){
+                lblDiff.textColor = UIColor.white
+                lblDiff.text = "00:00.00"
+            }
+            else{
+                lblDiff.textColor = UIColor.red
+                lblDiff.text = "-\(diff[1])"
+            }
+        }
+        
         lblSecondary[0].text = lblMain.text
         
         min = 0
