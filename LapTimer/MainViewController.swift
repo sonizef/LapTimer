@@ -67,7 +67,6 @@ class MainViewController: UIViewController{
         self.view.addSubview(volumeView)
         
         audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions(rawValue: 0), context: nil)
-
     }
     
     
@@ -87,7 +86,7 @@ class MainViewController: UIViewController{
                 
                 //Si chrono deja lancé, fonction "track"
                 if(currentChrono?.timer?.isValid == true){
-                    
+                    currentChrono?.track()
                 }
                 else{
                     currentChrono?.start((currentChrono?.btnStart)!)
@@ -100,7 +99,7 @@ class MainViewController: UIViewController{
                 
             }
             
-            //On remet toujours le volume à 0.5
+            //On remet toujours le volume à son origine
             (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(currentVolume, animated: false)
         }
     }

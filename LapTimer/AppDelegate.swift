@@ -23,12 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         audioSession = AVAudioSession.sharedInstance()
         
-//        let volumeView = MPVolumeView(frame: CGRect(x: -1000, y: -1000, width: 1, height: 1))
-//        self.view.addSubview(volumeView)
-        
-        //        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(0.5, animated: false)
-        //
-        
         do{
             try audioSession.setCategory("AVAudioSessionCategoryAmbient")
             
