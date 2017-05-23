@@ -14,6 +14,7 @@ class LesChronosTableViewController: UITableViewController {
     var Chrono2: ChronoViewController!
     var Chrono3: ChronoViewController!
     var lesChronos: [ChronoViewController]!
+    var mainView: MainViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,6 @@ class LesChronosTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
         
     }
 
@@ -63,6 +63,13 @@ class LesChronosTableViewController: UITableViewController {
         if(segue.identifier == "chrono3"){
             Chrono3 = segue.destination as! ChronoViewController
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.selectionStyle = .none
+        mainView = self.parent as? MainViewController
+        mainView?.changeChrono(indexPath.row)
+        
     }
     
     /*
