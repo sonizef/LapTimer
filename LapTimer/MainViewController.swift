@@ -85,7 +85,7 @@ class MainViewController: UIViewController{
                 //Quand on augmente le son
                 
                 //Si chrono deja lancé, fonction "track"
-                if(currentChrono?.timer?.isValid == false){
+                if(currentChrono?.timer?.isValid == true){
                     currentChrono?.track()
                 }
                 else{
