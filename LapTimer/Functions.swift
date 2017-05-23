@@ -6,6 +6,7 @@
 //  Copyright © 2017 SoniWeb. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import AVFoundation
 
@@ -44,3 +45,26 @@ func getDiff(t1: String, t2:String) -> [String] {
     
     return [code, String(format: "%0.2d:%0.2d.%0.2d",minutes,seconds,ms)]
 }
+
+extension UILabel{
+    
+    func isBest(t: String) -> Bool{
+        
+        let d1 = dateFormatter.date(from: self.text!)
+        let d2 = dateFormatter.date(from: t)
+        
+        
+        let interval: TimeInterval
+        interval = (d1?.timeIntervalSince(d2!))!
+        
+        if(interval < 0){
+            return true
+        }
+        else{
+            return false
+        }
+        
+    }
+    
+}
+

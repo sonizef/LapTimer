@@ -25,6 +25,7 @@ class ChronoViewController: UIViewController {
     @IBOutlet var lblSecondary: [UILabel]!
     @IBOutlet weak var selectedBackground: UIView!
     @IBOutlet weak var lblDiff: UILabel!
+    @IBOutlet weak var lblBest: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,12 @@ class ChronoViewController: UIViewController {
     }
     
     @IBAction func track(_ sender: Any) {
-        track()
+        if(timer == nil){
+            
+        }
+        else if(timer?.isValid)!{
+            track()
+        }
     }
     
     //Fonctions
@@ -86,6 +92,7 @@ class ChronoViewController: UIViewController {
         cent = 0
         
         lblMain.text = "\(String(format: "%02d", min)):\(String(format: "%02d", sec)).\(String(format: "%02d", cent))"
+        lblBest.text = lblMain.text
         lblSecondary[0].text = lblMain.text
         lblSecondary[1].text = lblMain.text
         lblSecondary[2].text = lblMain.text
@@ -104,6 +111,9 @@ class ChronoViewController: UIViewController {
         lblSecondary[2].text = lblSecondary[1].text
         lblSecondary[1].text = lblSecondary[0].text
         
+        if(lblMain.isBest(t: lblBest.text!)){
+            lblBest.text = lblMain.text
+        }
         
         if(lblSecondary[0].text != "00:00.00"){
             let diff = getDiff(t1: lblMain.text!, t2: lblSecondary[0].text!)
@@ -111,7 +121,7 @@ class ChronoViewController: UIViewController {
                 lblDiff.textColor = UIColor.green
                 lblDiff.text = "+\(diff[1])"
             }
-            else if(diff[0] == "0"){
+            else if(diff[0] == "2"){
                 lblDiff.textColor = UIColor.white
                 lblDiff.text = "00:00.00"
             }
@@ -119,6 +129,9 @@ class ChronoViewController: UIViewController {
                 lblDiff.textColor = UIColor.red
                 lblDiff.text = "-\(diff[1])"
             }
+        }
+        else{
+            lblBest.text = lblMain.text
         }
         
         lblSecondary[0].text = lblMain.text
